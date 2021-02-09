@@ -123,8 +123,8 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_LANG_CN=y" >> configs/templates/$TNAME.config      #设置界面简体中文
         echo "CONFIG_FIRMWARE_INCLUDE_QOS=y" >> configs/templates/$TNAME.config          #使用QOS
         echo "CONFIG_FIRMWARE_INCLUDE_SMBD36=y" >> configs/templates/$TNAME.config       #使用SMBD36新版本
-        echo "CONFIG_FIRMWARE_INCLUDE_DDNS_SSL=y" >> configs/templates/$TNAME.config     #删除DDNS_SSL
-        echo "CONFIG_FIRMWARE_INCLUDE_HTTPS=y" >> configs/templates/$TNAME.config        #删除HTTPS
+        echo "CONFIG_FIRMWARE_INCLUDE_DDNS_SSL=n" >> configs/templates/$TNAME.config     #删除DDNS_SSL
+        echo "CONFIG_FIRMWARE_INCLUDE_HTTPS=n" >> configs/templates/$TNAME.config        #删除HTTPS
         echo "CONFIG_FIRMWARE_INCLUDE_OPENVPN=n" >> configs/templates/$TNAME.config      #删除OPENVPN
         echo "CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW=y" >> configs/templates/$TNAME.config   #使用FFMPEG新版本
         echo "CONFIG_FIRMWARE_INCLUDE_XUPNPD=y" >> configs/templates/$TNAME.config       #删除用于IPTV的XUPNPD
@@ -138,7 +138,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_SOCAT=n" >> configs/templates/$TNAME.config        #删除工具SOCAT
         echo "CONFIG_FIRMWARE_INCLUDE_MTR=y" >> configs/templates/$TNAME.config          #删除工具MTR
         echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> configs/templates/$TNAME.config       #删除工具IPERF3
-        echo "CONFIG_FIRMWARE_INCLUDE_NANO=y" >> configs/templates/$TNAME.config         #删除工具NANO
+        echo "CONFIG_FIRMWARE_INCLUDE_NANO=n" >> configs/templates/$TNAME.config         #删除工具NANO
         echo "CONFIG_FIRMWARE_INCLUDE_HTOP=n" >> configs/templates/$TNAME.config         #删除工具HTOP
         echo "CONFIG_FIRMWARE_INCLUDE_LRZSZ=n" >> configs/templates/$TNAME.config        #删除工具LRZSZ
         echo "CONFIG_FIRMWARE_INCLUDE_CURL=y" >> configs/templates/$TNAME.config         #删除工具CURL
@@ -165,10 +165,10 @@ jobs:
         if [ $BUILD_VERSION == "chongshengB" ]; then
           echo "CONFIG_FIRMWARE_ENABLE_SWAP=y" >> configs/templates/$TNAME.config         #SWAP
           echo "CONFIG_FIRMWARE_INCLUDE_QOS=y" >> configs/templates/$TNAME.config         #QOS
-          echo "CONFIG_FIRMWARE_INCLUDE_DDNS_SSL=y" >> configs/templates/$TNAME.config    #HTTPS support for DDNS client
+          echo "CONFIG_FIRMWARE_INCLUDE_DDNS_SSL=n" >> configs/templates/$TNAME.config    #HTTPS support for DDNS client
           echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=n" >> configs/templates/$TNAME.config      #simple-obfs混淆插件
           echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=y" >> configs/templates/$TNAME.config      #adbyby plus+
-          echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=n" >> configs/templates/$TNAME.config     #阿里DDNS
+          echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> configs/templates/$TNAME.config     #阿里DDNS
           echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> configs/templates/$TNAME.config    #smartdns
           echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNSBIN=y" >> configs/templates/$TNAME.config #smartdns二进制文件
           echo "CONFIG_FIRMWARE_INCLUDE_SSSERVER=n" >> configs/templates/$TNAME.config    #删除SS server
