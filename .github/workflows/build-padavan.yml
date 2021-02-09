@@ -111,6 +111,7 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_TUNSAFE/d' configs/templates/$TNAME.config      #删除配置项adbyby plus+
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ALIDDNS/d' configs/templates/$TNAME.config      #删除配置项阿里DDNS
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ZEROTIER/d' configs/templates/$TNAME.config      #删除配置项ZEROTIER
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_TUNSAFE/d' configs/templates/$TNAME.config      #删除配置项TUNSAFE
         
         
         ####################################################################
@@ -172,6 +173,7 @@ jobs:
           echo "CONFIG_FIRMWARE_INCLUDE_CADDY=n" >> configs/templates/$TNAME.config       #在线文件管理服务
           echo "CONFIG_FIRMWARE_INCLUDE_CADDYBIN=n" >> configs/templates/$TNAME.config    #集成caddu执行文件，此文件有13M,请注意固件大小。如果不集成，会从网上下载下来执行，不影响正常使用
           echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=n" >> configs/templates/$TNAME.config #集成AdGuardHome
+          echo "CONFIG_FIRMWARE_INCLUDE_TUNSAFE=n" >> configs/templates/$TNAME.config     #使用TUNSAFE
           echo "CONFIG_FIRMWARE_INCLUDE_WYY=n" >> configs/templates/$TNAME.config         #网易云解锁
           echo "CONFIG_FIRMWARE_INCLUDE_WYYBIN=n" >> configs/templates/$TNAME.config      #网易云解锁GO版本执行文件（4M多）注意固件超大小,不集成会自动下载
           echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=y" >> configs/templates/$TNAME.config    #zerotier ~1.3M
