@@ -127,7 +127,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_HTTPS=n" >> configs/templates/$TNAME.config        #删除HTTPS
         echo "CONFIG_FIRMWARE_INCLUDE_OPENVPN=n" >> configs/templates/$TNAME.config      #删除OPENVPN
         echo "CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW=y" >> configs/templates/$TNAME.config   #使用FFMPEG新版本
-        echo "CONFIG_FIRMWARE_INCLUDE_XUPNPD=y" >> configs/templates/$TNAME.config       #删除用于IPTV的XUPNPD
+        echo "CONFIG_FIRMWARE_INCLUDE_XUPNPD=n" >> configs/templates/$TNAME.config       #删除用于IPTV的XUPNPD
         echo "CONFIG_FIRMWARE_INCLUDE_DOGCOM=n" >> configs/templates/$TNAME.config       #删除用于Drcom的工具DOGCOM
         echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=n" >> configs/templates/$TNAME.config  #删除SS plus+
         echo "CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=n" >> configs/templates/$TNAME.config #删除DNSFORWARDER
