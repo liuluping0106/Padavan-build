@@ -110,8 +110,10 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_FRPS/d' configs/templates/$TNAME.config         #删除配置项adbyby plus+
         sed -i '/CONFIG_FIRMWARE_INCLUDE_TUNSAFE/d' configs/templates/$TNAME.config      #删除配置项adbyby plus+
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ALIDDNS/d' configs/templates/$TNAME.config      #删除配置项阿里DDNS
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_ZEROTIER/d' configs/templates/$TNAME.config      #删除配置项ZEROTIER
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_ZEROTIER/d' configs/templates/$TNAME.config     #删除配置项ZEROTIER
         sed -i '/CONFIG_FIRMWARE_INCLUDE_TUNSAFE/d' configs/templates/$TNAME.config      #删除配置项TUNSAFE
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_DDNS_SSL/d' configs/templates/$TNAME.config     #删除配置项DDNS_SSL
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_QOS/d' configs/templates/$TNAME.config          #删除配置项QOS
         
         
         ####################################################################
@@ -160,6 +162,8 @@ jobs:
         # 如需使用这些插件，请修改24行 BUILD_VERSION 为 chongshengB
         #########################################################################################
         if [ $BUILD_VERSION == "chongshengB" ]; then
+          echo "CONFIG_FIRMWARE_INCLUDE_QOS=y" >> configs/templates/$TNAME.config         #QOS
+          echo "CONFIG_FIRMWARE_INCLUDE_DDNS_SSL=y" >> configs/templates/$TNAME.config    #HTTPS support for DDNS client
           echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=n" >> configs/templates/$TNAME.config      #simple-obfs混淆插件
           echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=y" >> configs/templates/$TNAME.config      #adbyby plus+
           echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> configs/templates/$TNAME.config     #阿里DDNS
