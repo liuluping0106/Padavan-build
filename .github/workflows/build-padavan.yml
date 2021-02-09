@@ -114,6 +114,7 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_TUNSAFE/d' configs/templates/$TNAME.config      #删除配置项TUNSAFE
         sed -i '/CONFIG_FIRMWARE_INCLUDE_DDNS_SSL/d' configs/templates/$TNAME.config     #删除配置项DDNS_SSL
         sed -i '/CONFIG_FIRMWARE_INCLUDE_QOS/d' configs/templates/$TNAME.config          #删除配置项QOS
+        sed -i '/CONFIG_FIRMWARE_ENABLE_SWAP/d' configs/templates/$TNAME.config          #删除配置项SWAP
         
         
         ####################################################################
@@ -162,11 +163,12 @@ jobs:
         # 如需使用这些插件，请修改24行 BUILD_VERSION 为 chongshengB
         #########################################################################################
         if [ $BUILD_VERSION == "chongshengB" ]; then
+          echo "CONFIG_FIRMWARE_ENABLE_SWAP=y" >> configs/templates/$TNAME.config         #SWAP
           echo "CONFIG_FIRMWARE_INCLUDE_QOS=y" >> configs/templates/$TNAME.config         #QOS
           echo "CONFIG_FIRMWARE_INCLUDE_DDNS_SSL=y" >> configs/templates/$TNAME.config    #HTTPS support for DDNS client
           echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=n" >> configs/templates/$TNAME.config      #simple-obfs混淆插件
           echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=y" >> configs/templates/$TNAME.config      #adbyby plus+
-          echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> configs/templates/$TNAME.config     #阿里DDNS
+          echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=n" >> configs/templates/$TNAME.config     #阿里DDNS
           echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> configs/templates/$TNAME.config    #smartdns
           echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNSBIN=y" >> configs/templates/$TNAME.config #smartdns二进制文件
           echo "CONFIG_FIRMWARE_INCLUDE_SSSERVER=n" >> configs/templates/$TNAME.config    #删除SS server
