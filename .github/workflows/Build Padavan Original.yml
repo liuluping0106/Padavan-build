@@ -99,6 +99,10 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_EAP_PEAP/d' configs/templates/$TNAME.config     #删除配置项EAP_PEAP
         sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EC/d' configs/templates/$TNAME.config   #删除配置项OPENSSL_EC
         sed -i '/CONFIG_FIRMWARE_CPU_900MHZ/d' configs/templates/$TNAME.config           #删除配置项超频900MHz
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_ALIDDNS/d' configs/templates/$TNAME.config      #删除配置项阿里DDNS
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_ADBYBY/d' configs/templates/$TNAME.config       #删除配置项adbyby plus+
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_SMARTDNS/d' configs/templates/$TNAME.config     #删除配置项SMARTDNS
+        
         ####################################################################
         # 以下选项是定义你需要的功能（y=集成,n=忽略），重新写入到.config文件。
         ####################################################################
