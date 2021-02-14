@@ -102,6 +102,8 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ALIDDNS/d' configs/templates/$TNAME.config      #删除配置项阿里DDNS
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ADBYBY/d' configs/templates/$TNAME.config       #删除配置项adbyby plus+
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SMARTDNS/d' configs/templates/$TNAME.config     #删除配置项SMARTDNS
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_FRPC/d' configs/templates/$TNAME.config         #删除配置项FRPC
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_FRPS/d' configs/templates/$TNAME.config         #删除配置项FRPS
         
         ####################################################################
         # 以下选项是定义你需要的功能（y=集成,n=忽略），重新写入到.config文件。
@@ -164,6 +166,8 @@ jobs:
           echo "CONFIG_FIRMWARE_INCLUDE_WYY=n" >> configs/templates/$TNAME.config         #网易云解锁
           echo "CONFIG_FIRMWARE_INCLUDE_WYYBIN=n" >> configs/templates/$TNAME.config      #网易云解锁GO版本执行文件（4M多）注意固件超大小,不集成会自动下载
           echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=y" >> configs/templates/$TNAME.config    #zerotier ~1.3M
+          echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> configs/templates/$TNAME.config        #内网穿透FRPC
+          echo "CONFIG_FIRMWARE_INCLUDE_FRPS=y" >> configs/templates/$TNAME.config        #内网穿透FRPS
           # 更新v2ray版本
           v2_version=`curl --silent "https://api.github.com/repos/v2fly/v2ray-core/releases/latest" | jq -r '.tag_name | sub("^v";"")'`
           sed -i "s/V2ray_VERSION := .*/V2ray_VERSION := $v2_version/g" /opt/rt-n56u/trunk/user/v2ray/Makefile
